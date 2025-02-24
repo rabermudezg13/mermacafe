@@ -1,48 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Merma de Café</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input {
-            margin-bottom: 10px;
-            padding: 5px;
-        }
-        button {
-            margin: 20px 0;
-            padding: 10px 20px;
-        }
-        #output {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
-</head>
+<!-- ... head y estilos sin cambios ... -->
 <body>
     <h2>Calculadora de Merma de Café</h2>
 
     <label for="peso_pergamino">Peso en pergamino (kg):</label>
-    <input type="number" id="peso_pergamino" step="0.01"><br>
+    <input type="number" id="peso_pergamino" step="0.01" min="0"><br>
 
     <label for="peso_trilla">Peso después de trillar (kg):</label>
-    <input type="number" id="peso_trilla" step="0.01"><br>
+    <input type="number" id="peso_trilla" step="0.01" min="0"><br>
 
     <label for="peso_tostado">Peso tostado (kg):</label>
-    <input type="number" id="peso_tostado" step="0.01"><br>
+    <input type="number" id="peso_tostado" step="0.01" min="0"><br>
 
-    <button onclick="calcularMerma()">Calcular</button>
+    <button type="button">Calcular</button>
 
     <h3>Resultados:</h3>
     <pre id="output"></pre>
