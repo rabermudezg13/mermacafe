@@ -1,4 +1,5 @@
-function calcularMerma(pesoInicial, pesoFinal) {
+// ... existing code ...
+function calcularMermaEntrePesos(pesoInicial, pesoFinal) {
     return pesoInicial - pesoFinal;
 }
 
@@ -17,8 +18,8 @@ function calcularMerma() {
         return;
     }
 
-    let mermaTrillado = calcularMerma(pesoPergamino, pesoTrilla);
-    let mermaTostado = calcularMerma(pesoTrilla, pesoTostado);
+    let mermaTrillado = calcularMermaEntrePesos(pesoPergamino, pesoTrilla);
+    let mermaTostado = calcularMermaEntrePesos(pesoTrilla, pesoTostado);
 
     let porcentajeMermaTrillado = calcularPorcentajeMerma(pesoPergamino, mermaTrillado);
     let porcentajeMermaTostado = calcularPorcentajeMerma(pesoTrilla, mermaTostado);
@@ -27,4 +28,5 @@ function calcularMerma() {
     resultado += `Merma durante tostado: ${mermaTostado.toFixed(2)} kg (${porcentajeMermaTostado.toFixed(2)}%)`;
 
     document.getElementById("output").innerText = resultado;
-} 
+}
+// ... existing code ...
