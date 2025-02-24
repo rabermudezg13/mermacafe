@@ -1,24 +1,52 @@
-function calcularMerma(pesoInicial, pesoFinal) {
-    return pesoInicial - pesoFinal;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Merma de Café</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        button {
+            margin: 20px 0;
+            padding: 10px 20px;
+        }
+        #output {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Merma de Café</h2>
 
-function calcularPorcentajeMerma(pesoInicial, merma) {
-    return (pesoInicial !== 0) ? (merma / pesoInicial) * 100 : 0;
-}
+    <label for="peso_pergamino">Peso en pergamino (kg):</label>
+    <input type="number" id="peso_pergamino" step="0.01"><br>
 
-function main() {
-    let pesoPergamino = parseFloat(prompt("Ingrese el peso del café en pergamino (kg):"));
-    let pesoTrilla = parseFloat(prompt("Ingrese el peso del café después de trillar (kg):"));
-    let pesoTostado = parseFloat(prompt("Ingrese el peso del café tostado (kg):"));
+    <label for="peso_trilla">Peso después de trillar (kg):</label>
+    <input type="number" id="peso_trilla" step="0.01"><br>
 
-    let mermaTrillado = calcularMerma(pesoPergamino, pesoTrilla);
-    let mermaTostado = calcularMerma(pesoTrilla, pesoTostado);
+    <label for="peso_tostado">Peso tostado (kg):</label>
+    <input type="number" id="peso_tostado" step="0.01"><br>
 
-    let porcentajeMermaTrillado = calcularPorcentajeMerma(pesoPergamino, mermaTrillado);
-    let porcentajeMermaTostado = calcularPorcentajeMerma(pesoTrilla, mermaTostado);
+    <button onclick="calcularMerma()">Calcular</button>
 
-    console.log(`Merma durante trilla: ${mermaTrillado.toFixed(2)} kg (${porcentajeMermaTrillado.toFixed(2)}%)`);
-    console.log(`Merma durante tostado: ${mermaTostado.toFixed(2)} kg (${porcentajeMermaTostado.toFixed(2)}%)`);
-}
+    <h3>Resultados:</h3>
+    <pre id="output"></pre>
 
-main();
+    <script src="script.js"></script>
+</body>
+</html>
